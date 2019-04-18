@@ -10,7 +10,7 @@ import java.net.URL;
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.RectangleSize;
 
-public class ApplitoolsTest extends TestCase {
+public class AppTest extends TestCase {
     private String username = System.getenv("CBTUSRNAME"), authkey = System.getenv("CBTAUTH"), score = "fail",
             hubUrl = "http://" + username + ":" + authkey + "@hub.crossbrowsertesting.com:80/wd/hub";
     private CBTHelper cbt;
@@ -18,15 +18,17 @@ public class ApplitoolsTest extends TestCase {
     private Eyes eyes;
 
     public void setUp() throws MalformedURLException {
+        System.out.println();
         DesiredCapabilities caps = new DesiredCapabilities();
         cbt = new CBTHelper(username, authkey, false);
         caps.setCapability("name", "KC Applitools Example");
         caps.setCapability("browserName", "Chrome");
+        caps.setCapability("version", "73");
         caps.setCapability("platform", "Windows 10");
         caps.setCapability("screenResolution", "1366x768");
 
         eyes = new Eyes();
-        eyes.setApiKey(System.getenv("APLITOOLS"));
+        eyes.setApiKey(System.getenv("APPLITOOLS"));
 
         // create a new RemoteWebDriver object
         driver = new RemoteWebDriver(new URL(hubUrl), caps);
