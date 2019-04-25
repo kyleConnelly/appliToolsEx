@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/appliToolsEx.iml" filepath="$PROJECT_DIR$/.idea/appliToolsEx.iml" />
       <module fileurl="file://$PROJECT_DIR$/appliToolsEx.iml" filepath="$PROJECT_DIR$/appliToolsEx.iml" />
     </modules>
   </component>
