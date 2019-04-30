@@ -34,6 +34,9 @@ public class AppTest extends TestCase {
         driver = new RemoteWebDriver(new URL(hubUrl), caps);
     }
 
+  //  myViewportSize = eyes.getViewportSize();
+      //  System.out.println("viewport="+myViewportSize.width+"x"+myViewportSize.height);
+
     public void testApp() {
         // open a new instance of eyes
         eyes.open(driver, "CrossBrowserTesting", "My first Selenium Java test!",
