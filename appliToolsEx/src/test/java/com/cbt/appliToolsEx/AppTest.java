@@ -5,8 +5,10 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.RectangleSize;
 
@@ -21,11 +23,13 @@ public class AppTest extends TestCase {
         System.out.println();
         DesiredCapabilities caps = new DesiredCapabilities();
         cbt = new CBTHelper(username, authkey, false);
-        caps.setCapability("name", "KC Applitools Example");
-        caps.setCapability("browserName", "Chrome");
-        caps.setCapability("version", "73");
-        caps.setCapability("platform", "Windows 10");
-        caps.setCapability("screenResolution", "1366x768");
+        caps.setCapability("name", "Atypon Testing IntelliJ");
+        caps.setCapability("browserName", "Safari");
+        caps.setCapability("deviceName", "iPhone 7 Simulator");
+        caps.setCapability("platformVersion", "10.2");
+        caps.setCapability("platformName", "iOS");
+        caps.setCapability("deviceOrientation", "portrait");
+        caps.setCapability("record_video", "true");
 
         eyes = new Eyes();
         eyes.setApiKey(System.getenv("APPLITOOLS"));
@@ -34,19 +38,23 @@ public class AppTest extends TestCase {
         driver = new RemoteWebDriver(new URL(hubUrl), caps);
     }
 
-  //  myViewportSize = eyes.getViewportSize();
-      //  System.out.println("viewport="+myViewportSize.width+"x"+myViewportSize.height);
+    //  myViewportSize = eyes.getViewportSize();
+    //  System.out.println("viewport="+myViewportSize.width+"x"+myViewportSize.height);
 
     public void testApp() {
         // open a new instance of eyes
-        eyes.open(driver, "CrossBrowserTesting", "My first Selenium Java test!",
-                new RectangleSize(800, 600));
+        //for desktops
+//        eyes.open(driver, "CrossBrowserTesting", "My first Selenium Java test!",
+//                new RectangleSize(800, 600));
+
+        //for mobiles. you dont need the RectangleSize()
+        eyes.open(driver, "Atypon", "Testing for Atypon IntelliJ");
 
         // navigate to the webpage we'd like to capture
-        driver.get("https://crossbrowsertesting.com/visual-testing");
+        driver.get("https://dlnext.acm.org/toc/csur/current");
 
         // Visual checkpoint
-        eyes.checkWindow("Visual Testing");
+        eyes.checkWindow("Search within CSUR");
 
         eyes.close();
         score = "pass";
