@@ -32,7 +32,7 @@ public class AppTest extends TestCase {
         caps.setCapability("record_video", "true");
 
         eyes = new Eyes();
-        eyes.setApiKey(System.getenv("APPLITOOLS"));
+        eyes.setApiKey(System.getenv("APPLITOOLS"));//test git
 
         // create a new RemoteWebDriver object
         driver = new RemoteWebDriver(new URL(hubUrl), caps);
