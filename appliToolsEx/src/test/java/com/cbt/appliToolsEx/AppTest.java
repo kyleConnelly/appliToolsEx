@@ -1,4 +1,8 @@
+//To run this test you need to be in  ~/appliToolsEx/appliToolsEx
+
 package com.cbt.appliToolsEx;
+
+
 
 import junit.framework.Test;
 import junit.framework.TestCase;
